@@ -11,17 +11,7 @@ def get_dictionary():
   return words
 
 # analyze a one-word password
-def one_word(password):
-  words = get_dictionary()
-  guesses = 0
-  # get each word from the dictionary file
-  for w in words:
-    guesses += 1
-    if (w == password):
-      return True, guesses
-  return False, guesses
-  
-'''def two_words_and_digit():
+'''def one_word(password):
   words = get_dictionary()
   guesses = 0
   # get each word from the dictionary file
@@ -30,3 +20,15 @@ def one_word(password):
     if (w == password):
       return True, guesses
   return False, guesses'''
+  
+def two_words(password):
+  words = get_dictionary()
+  guesses = 0
+  # get each word from the dictionary file
+  for w in words:
+    for w2 in words:
+      guesses += 1
+      print(guesses)
+      if (w+w2 == password):
+        return True, guesses
+  return False, guesses
