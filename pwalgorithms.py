@@ -3,7 +3,7 @@
 # get words from password dictionary file
 def get_dictionary():
   words = []
-  dictionary_file = open("dictionary.txt")
+  dictionary_file = open("2.1.3-Password-Strength-Strong/dictionary.txt")
   for line in dictionary_file:
     # store word, omitting trailing new-line
     words.append(line[:-1])
@@ -28,7 +28,7 @@ def two_words(password):
   for w in words:
     for w2 in words:
       guesses += 1
-      print(guesses)
+      #print(guesses)
       if (w+w2 == password):
         return True, guesses
   return False, guesses
